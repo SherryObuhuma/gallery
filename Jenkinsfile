@@ -21,5 +21,16 @@ pipeline{
                 sh 'gradle test'
             }
         }
+        stage('Install npm dependencies'){
+            steps{
+                sh 'npm install'
+            }
+        }
+        stage('Deploy to render'){
+            steps{
+                sh 'node server.js'
+            }
+        }
+        
     }
 }
