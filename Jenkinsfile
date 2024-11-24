@@ -53,7 +53,7 @@ pipeline{
         }
         failure {
             slackSend(
-                channel: '#your-channel', 
+                channel: '#sherry_ip1', 
                 color: 'danger', 
                 message: """
                 :x: *Deployment Failed!*
