@@ -2,6 +2,7 @@
   "name": "dark-room",
   "version": "1.0.0",
   "description": "",
+  "type": "commonjs",
   "main": "server.js",
   "scripts": {
     "test": "mocha --exit"
@@ -17,6 +18,7 @@
     "mongoose": "^5.13.22",
     "multer": "^1.4.2",
     "uuid": "^8.1.0"
+    
   },
   "devDependencies": {
     "chai": "^3.2.0",
