@@ -8,5 +8,5 @@ config.mongoURI = {
     test: 'mongodb+srv://sherry:Macherie2015@gallery.wc344.mongodb.net/darkroom-test?retryWrites=true&w=majority',
 }
 module.exports = {
-    URI,
+    URI:"mongodb+srv://sherry:Macherie2015@cluster1.mabot.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1",
 };
