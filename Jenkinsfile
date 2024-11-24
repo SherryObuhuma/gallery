@@ -40,8 +40,7 @@ pipeline{
     post {
         success{
             slackSend(
-                channel: '#sherry_ip1'
-                color: 'good'
+                channel: '#sherry_ip1',
                 message: """
                 :white_check_mark: *Deployment Successful!*
                 - *Job Name*: ${env.JOB_NAME}
@@ -54,7 +53,6 @@ pipeline{
         failure {
             slackSend(
                 channel: '#sherry_ip1', 
-                color: 'danger', 
                 message: """
                 :x: *Deployment Failed!*
                 - *Job Name*: ${env.JOB_NAME}
