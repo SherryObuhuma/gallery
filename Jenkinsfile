@@ -3,6 +3,7 @@ pipeline{
     
     tools{
         gradle 'gradle'
+        nodejs 'Default node'
     }
 
     environment {
@@ -27,7 +28,7 @@ pipeline{
         }
         stage('Install npm dependencies'){
             steps{
-                sh '/usr/bin/npm install'
+                sh 'npm install'
             }
         }
         stage('Deploy to render'){
@@ -57,6 +58,8 @@ pipeline{
             slackSend(
                 channel: '#sherry_ip1',
                 color: 'danger',
+                username: 'Jenkins Bot',
+                iconEmoji: ':rocket',
                 message: """
                 :x: *Deployment Failed!*
                 - *Job Name*: ${env.JOB_NAME}
