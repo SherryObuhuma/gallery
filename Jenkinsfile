@@ -3,7 +3,6 @@ pipeline{
     
     tools{
         gradle 'gradle'
-        nodejs 'Default node'
     }
 
     environment {
