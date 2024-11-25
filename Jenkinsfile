@@ -27,7 +27,7 @@ pipeline{
         }
         stage('Install npm dependencies'){
             steps{
-                sh 'npm install'
+                sh '/usr/bin/npm install'
             }
         }
         stage('Deploy to render'){
@@ -41,6 +41,9 @@ pipeline{
         success{
             slackSend(
                 channel: '#sherry_ip1',
+                color: 'good',
+                username: 'Jenkins Bot',
+                iconEmoji: ':rocket',
                 message: """
                 :white_check_mark: *Deployment Successful!*
                 - *Job Name*: ${env.JOB_NAME}
@@ -52,7 +55,8 @@ pipeline{
         }
         failure {
             slackSend(
-                channel: '#sherry_ip1', 
+                channel: '#sherry_ip1',
+                color: 'danger',
                 message: """
                 :x: *Deployment Failed!*
                 - *Job Name*: ${env.JOB_NAME}
